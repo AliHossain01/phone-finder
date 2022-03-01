@@ -19,6 +19,37 @@
         <h1 class="text-center text-success mb-4">Purple Phone Shop</h1>
     </header>
 
+    <main>
+        <section>
+            <h3 class="text-center text-success">Search Your Phone</h3>
+
+            <!-- phoone search area -->
+            <div class="input-group mb-3 w-50 mx-auto g-4">
+                <input id="search-field" type="text" class="form-control" placeholder="Search the phone"
+                    aria-label="Search the phone" aria-describedby="button-addon2">
+                <button onclick="searchPhone()" class="btn btn-outline-secondary" type="button"
+                    id="button-search">Search</button>
+            </div>
+
+            <!-- phone search result -->
+
+            <div id="search-result" class="row row-cols-1 row-cols-md-3 g-4 p-4 m-4">
+            </div>
+
+            <!-- error message -->
+            <div class="notify-section">
+                <p id="notify-fail" class="notify">❌ Please Enter a Valid Phone Name</p>
+            </div>
+
+            <!-- single phone details -->
+            <div id="phone-details" class=" w-50 mx-auto mb-3">
+            </div>
+
+
+
+        </section>
+    </main>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
