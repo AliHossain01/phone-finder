@@ -82,7 +82,9 @@ const displayPhoneDetail = phone => {
 
         <h6 class="card-title">Sensors:</h6> 
         <p class="card-text"> <small> ${phone.mainFeatures.sensors ? phone.mainFeatures.sensors : 'No sensor available'} </small></p>
-
+       
+        <h6 class="card-title">Others:</h6>  
+        <p class="card-text"> <small> Bluetooth: ${phone.others.Bluetooth}, GPS: ${phone.others.GPS}, NFC: ${phone.others.NFC}, Radio: ${phone.others.Radio}, USB: ${phone.others.USB} </small> </p> 
 
         
     </div>
