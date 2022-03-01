@@ -52,9 +52,32 @@ const displaySearchResult = phones => {
 
 //single phone details
 const loadPhoneDetail = slug => {
-    console.log(slug);
+    //console.log(slug);
     const url = `https://openapi.programming-hero.com/api/phone/${slug}`;
     fetch(url)
         .then(res => res.json())
-        .then(data => console.log(data.data));
+        .then(data => displayPhoneDetail(data.data));
+}
+
+// Show details of each phone
+const displayPhoneDetail = phone => {
+    //console.log(phone);
+    const phoneDetails = document.getElementById('phone-details');
+    phoneDetails.textContent = '';
+
+    const div = document.createElement('div');
+    div.classList.add('card');
+    div.innerHTML = `
+    <img src="${phone.image}" class="card-img-top" alt="...">
+    <div class="card-body bg-info text-dark">
+        <h6 class="card-title">Brand: ${phone.brand}</h6>
+        <p class="card-text"><small> ${phone.name}</small></p>
+        <p class="card-text"><small>${phone.releaseDate ? phone.releaseDate : 'Comming Soon'} </small></p>  
+        
+       
+
+        
+    </div>
+    `;
+    phoneDetails.appendChild(div);
 }
