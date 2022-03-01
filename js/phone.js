@@ -61,7 +61,7 @@ const loadPhoneDetail = slug => {
 
 // Show details of each phone
 const displayPhoneDetail = phone => {
-    console.log(phone);
+    //console.log(phone);
     const phoneDetails = document.getElementById('phone-details');
     phoneDetails.textContent = '';
 
@@ -79,6 +79,10 @@ const displayPhoneDetail = phone => {
         <p class="card-text"> <small> Display Size: ${phone.mainFeatures.displaySize}</small></p>    
         <p class="card-text"><small> Memory: ${phone.mainFeatures.memory}</small></p>    
         <p class="card-text"><small>Storage: ${phone.mainFeatures.storage}</small></p>
+
+        <h6 class="card-title">Sensors:</h6> 
+        <p class="card-text"> <small> ${phone.mainFeatures.sensors ? phone.mainFeatures.sensors : 'No sensor available'} </small></p>
+
 
         
     </div>
