@@ -49,3 +49,12 @@ const displaySearchResult = phones => {
         searchResult.appendChild(div);
     })
 }
+
+//single phone details
+const loadPhoneDetail = slug => {
+    console.log(slug);
+    const url = `https://openapi.programming-hero.com/api/phone/${slug}`;
+    fetch(url)
+        .then(res => res.json())
+        .then(data => console.log(data.data));
+}
