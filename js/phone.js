@@ -32,7 +32,7 @@ const displaySearchResult = phones => {
         failError.style.display = 'block';
     }
     phones.forEach(phone => {
-        //console.log(phone);
+        //console.log(phone.slug);
         const div = document.createElement('div');
         div.classList.add('col');
         div.innerHTML = `
@@ -52,7 +52,7 @@ const displaySearchResult = phones => {
 
 //single phone details
 const loadPhoneDetail = slug => {
-    //console.log(slug);
+    console.log(slug);
     const url = `https://openapi.programming-hero.com/api/phone/${slug}`;
     fetch(url)
         .then(res => res.json())
@@ -61,7 +61,7 @@ const loadPhoneDetail = slug => {
 
 // Show details of each phone
 const displayPhoneDetail = phone => {
-    //console.log(phone);
+    console.log(phone);
     const phoneDetails = document.getElementById('phone-details');
     phoneDetails.textContent = '';
 
@@ -74,7 +74,11 @@ const displayPhoneDetail = phone => {
         <p class="card-text"><small> ${phone.name}</small></p>
         <p class="card-text"><small>${phone.releaseDate ? phone.releaseDate : 'Comming Soon'} </small></p>  
         
-       
+        <h6 class="card-title">Main Features:</h6>
+        <p class="card-text"> <small> Chipset: ${phone.mainFeatures.chipSet} </small></p>    
+        <p class="card-text"> <small> Display Size: ${phone.mainFeatures.displaySize}</small></p>    
+        <p class="card-text"><small> Memory: ${phone.mainFeatures.memory}</small></p>    
+        <p class="card-text"><small>Storage: ${phone.mainFeatures.storage}</small></p>
 
         
     </div>
